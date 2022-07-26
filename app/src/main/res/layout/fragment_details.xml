@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.khimich.ukeess.models.binding.DetailsModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image"
+                setImageUrl="@{model.imageUrl}"
+                android:layout_width="@dimen/width_height_details_img"
+                android:layout_height="@dimen/width_height_details_img"
+                android:layout_marginTop="50dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@{model.name}"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/name">
+
+                <include
+                    layout="@layout/view_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    bind:model="@{model.genderModel}" />
+
+                <include
+                    layout="@layout/view_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    bind:model="@{model.birthDateModel}" />
+
+                <include
+                    layout="@layout/view_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    bind:model="@{model.birthPlaceModel}" />
+
+                <include
+                    layout="@layout/view_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    bind:model="@{model.deathDateModel}" />
+
+                <include
+                    layout="@layout/view_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    bind:model="@{model.deathPlaceModel}" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

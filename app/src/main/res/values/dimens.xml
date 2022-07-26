@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_horizontal_item_people">20dp</dimen>
+    <dimen name="padding_vertical_item_people">15dp</dimen>
+
+    <dimen name="width_height_item_people_img">50dp</dimen>
+    <dimen name="width_height_details_img">150dp</dimen>
+</resources>
